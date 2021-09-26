@@ -5,3 +5,5 @@ RUN dpkg --add-architecture arm64 && \
 	DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 	libasound2-dev:arm64 \
 	pkg-config
+
+ENV PKG_CONFIG_PATH="/usr/lib/aarch64-linux-gnu/pkgconfig"
