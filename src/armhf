@@ -1,0 +1,9 @@
+FROM ghcr.io/cross-rs/armv7-unknown-linux-gnueabihf:main
+
+RUN dpkg --add-architecture armhf && \
+	apt-get update && \
+	DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+	libasound2-dev:armhf \
+	pkg-config
+
+ENV PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
